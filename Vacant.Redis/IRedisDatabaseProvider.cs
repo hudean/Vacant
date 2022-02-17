@@ -66,6 +66,23 @@ namespace Vacant.Redis
 
         #region 异步/Async
 
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="value">值</param>
+        /// <param name="when"></param>
+        /// <param name="flag"></param>
+        /// <returns></returns>
+        public Task<bool> AddAsync(string key, string value, When when = When.Always, CommandFlags flag = CommandFlags.None);
+        public Task<bool> AddAsync(string key, string value, TimeSpan? expiry = default(TimeSpan?), When when = When.Always, CommandFlags flag = CommandFlags.None);
+        public Task<bool> AddAsync(string key, string value, DateTimeOffset expiresAt, When when = When.Always, CommandFlags flag = CommandFlags.None);
+
+        public Task<bool> ReplaceAsync(string key, string value, When when = When.Always, CommandFlags flag = CommandFlags.None);
+        public Task<bool> ReplaceAsync(string key, string value, TimeSpan? expiry = default(TimeSpan?), When when = When.Always, CommandFlags flag = CommandFlags.None);
+        public Task<bool> ReplaceAsync(string key, string value, DateTimeOffset expiresAt, When when = When.Always, CommandFlags flag = CommandFlags.None);
+
+
         #endregion
 
 

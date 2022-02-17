@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vacant.Domain
+namespace Vacant.EntityFrameworkCore
 {
     public class DbContextNameAttribute : Attribute
     {

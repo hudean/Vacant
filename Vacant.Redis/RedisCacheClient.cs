@@ -13,12 +13,9 @@ namespace Vacant.Redis
         private readonly int dbNumber;
 
         private readonly IConnectionMultiplexer _connectionMultiplexer;
-        public RedisCacheClient(
-          //RedisCacheConnectionManager connectionManager
-          ConnectionMultiplexer redis
-          )
+        public RedisCacheClient(ConnectionMultiplexer connectionMultiplexer)
         {
-            this._connectionMultiplexer = redis;//RedisCacheConnectionManager.GetConnection("");
+            this._connectionMultiplexer = connectionMultiplexer;
         }
 
 

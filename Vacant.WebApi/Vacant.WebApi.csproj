@@ -9,10 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Vacant.Applications\Vacant.Applications.csproj" />
     <ProjectReference Include="..\Vacant.EventBusRabbitMQ\Vacant.EventBusRabbitMQ.csproj" />
     <ProjectReference Include="..\Vacant.EventBusServiceBus\Vacant.EventBusServiceBus.csproj" />
     <ProjectReference Include="..\Vacant.EventBus\Vacant.EventBus.csproj" />
     <ProjectReference Include="..\Vacant.IntegrationEventLogEF\Vacant.IntegrationEventLogEF.csproj" />
+    <ProjectReference Include="..\Vacant.Model\Vacant.Model.csproj" />
     <ProjectReference Include="..\Vacant.Redis\Vacant.Redis.csproj" />
   </ItemGroup>
 

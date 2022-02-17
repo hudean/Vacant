@@ -13,8 +13,9 @@ using System.Threading.Tasks;
 using Vacant.Domain.Entites;
 using Vacant.Domain.Extensions;
 using Vacant.Domain.LinqExpressions;
+using Vacant.Domain;
 
-namespace Vacant.Domain
+namespace Vacant.EntityFrameworkCore
 {
     public class EfCoreDbContext : DbContext
     {

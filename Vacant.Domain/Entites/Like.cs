@@ -11,9 +11,19 @@ namespace Vacant.Domain.Entites
     /// </summary>
     public class Like:Entity<int>
     {
-        public int RelationId { get; set; }
-        public string RelationType { get; set; }
+        /// <summary>
+        /// 点赞用户id
+        /// </summary>
         public int UserId { get; set; }
+        /// <summary>
+        /// 点赞所属类型表的id
+        /// </summary>
+        public int RelationId { get; set; }
+        /// <summary>
+        /// 点赞所属类型
+        /// </summary>
+        public string RelationType { get; set; }
+      
         public DateTime CreatedDate { get; set; }
     }
 }

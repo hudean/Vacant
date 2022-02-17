@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Vacant.Domain.Uow;
 
-namespace Vacant.Domain.Uow
+namespace Vacant.EntityFrameworkCore.UnitOfWork
 {
     public class EfCoreUnitOfWork<TDbContext> : IUnitOfWork where TDbContext : DbContext
     {

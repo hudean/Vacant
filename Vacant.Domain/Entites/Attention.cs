@@ -19,7 +19,7 @@ namespace Vacant.Domain.Entites
         /// <summary>
         /// 被关注的用户id
         /// </summary>
-        public int AttentionUserId { get; set; }
+        public int FollowedUserId { get; set; }
         public DateTime CreatedDate { get; set; }
     }
 }

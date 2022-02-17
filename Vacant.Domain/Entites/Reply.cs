@@ -31,14 +31,7 @@ namespace Vacant.Domain.Entites
         /// </summary>
         public int ToRepliedUserId { get; set; }
 
-        #region
-
-        //public int? RelationId { get; set; }
-
-        //public string RelationType { get; set; }
-
-        #endregion
-
+      
         /// <summary>
         /// 审核id
         /// </summary>
@@ -79,12 +72,6 @@ namespace Vacant.Domain.Entites
         /// </summary>
         public int CommentId { get; set; }
 
-
-        /// <summary>
-        /// 回复类型
-        /// comment的话，那么replyId＝commitId，如果reply_type是reply的话，这表示这条回复的父回复。
-        /// </summary>
-       // public string ReplyType { get; set; }
 
         /// <summary>
         /// 点赞数量

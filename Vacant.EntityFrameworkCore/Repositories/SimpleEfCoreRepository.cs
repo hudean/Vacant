@@ -7,18 +7,20 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Vacant.Domain;
 using Vacant.Domain.Entites;
+using Vacant.Domain.Repositories;
 
-namespace Vacant.Domain.Repositories
+namespace Vacant.EntityFrameworkCore.Repositories
 {
-    public class EfCoreRepository2<TEntity> : IRepository<TEntity>,
+    public class SimpleEfCoreRepository<TEntity> : IRepository<TEntity>,
        IEfCoreRepository<TEntity>
        where TEntity : class, IEntity
     {
-        private readonly DbContext _dbContext;
+        private readonly SimpleEfCoreDbContext _dbContext;
         private readonly DbSet<TEntity> _dbSet;
         public IGuidGenerator GuidGenerator { get; set; }
-        public EfCoreRepository2(EfCoreDbContext dbContext)
+        public SimpleEfCoreRepository(SimpleEfCoreDbContext dbContext)
         {
             _dbContext = dbContext;
             _dbSet = dbContext.Set<TEntity>();
@@ -468,12 +470,12 @@ namespace Vacant.Domain.Repositories
     }
 
 
-    public class EfCoreRepository2<TEntity, TKey> : EfCoreRepository2<TEntity>,
+    public class SimpleEfCoreRepository<TEntity, TKey> : SimpleEfCoreRepository<TEntity>,
        IEfCoreRepository<TEntity, TKey>, IRepository<TEntity, TKey>
       where TEntity : class, IEntity<TKey>
     {
 
-        public EfCoreRepository2(EfCoreDbContext dbContext) : base(dbContext)
+        public SimpleEfCoreRepository(SimpleEfCoreDbContext dbContext) : base(dbContext)
         {
 
         }

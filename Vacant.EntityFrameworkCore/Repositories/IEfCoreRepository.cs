@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vacant.Domain.Entites;
+using Vacant.Domain.Repositories;
 
-namespace Vacant.Domain.Repositories
+namespace Vacant.EntityFrameworkCore.Repositories
 {
     //public interface IEfCoreRepository
     //{

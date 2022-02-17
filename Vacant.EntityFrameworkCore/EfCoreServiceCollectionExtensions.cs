@@ -9,8 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Vacant.Domain.Entites;
 using Vacant.Domain.Repositories;
+using Vacant.EntityFrameworkCore.Repositories;
 
-namespace Vacant.Domain
+namespace Vacant.EntityFrameworkCore
 {
     public static class EfCoreServiceCollectionExtensions
     {

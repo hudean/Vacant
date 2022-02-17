@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Vacant.Domain.LinqExpressions
 {
-    internal static class ExpressionCombiner
+    public static class ExpressionCombiner
     {
         public static Expression<Func<T, bool>> Combine<T>(Expression<Func<T, bool>> expression1, Expression<Func<T, bool>> expression2)
         {

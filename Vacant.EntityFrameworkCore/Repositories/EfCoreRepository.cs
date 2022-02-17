@@ -8,10 +8,13 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Vacant.Domain;
 using Vacant.Domain.Entites;
+using Vacant.Domain.Repositories;
 using Vacant.Domain.Uow;
+using Vacant.EntityFrameworkCore.UnitOfWork;
 
-namespace Vacant.Domain.Repositories
+namespace Vacant.EntityFrameworkCore.Repositories
 {
 
     public class EfCoreRepository<TDbContext, TEntity> : IRepository<TEntity>,

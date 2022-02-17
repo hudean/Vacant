@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Vacant.Domain.Entites;
 
-namespace Vacant.Domain.Repositories
+namespace Vacant.EntityFrameworkCore.Repositories
 {
     public interface IEfCoreBulkOperationProvider
     {

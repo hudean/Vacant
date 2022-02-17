@@ -153,6 +153,43 @@ namespace Vacant.Redis
 
         #region 异步/Async
 
+
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="value">值</param>
+        /// <param name="when"></param>
+        /// <param name="flag"></param>
+        /// <returns></returns>
+        public Task<bool> AddAsync(string key, string value, When when = When.Always, CommandFlags flag = CommandFlags.None)
+        {
+            return Database.StringSetAsync(key, value, null, when, flag);
+        }
+        public Task<bool> AddAsync(string key, string value, TimeSpan? expiry = default(TimeSpan?), When when = When.Always, CommandFlags flag = CommandFlags.None)
+        {
+            return Database.StringSetAsync(key, value, expiry, when, flag);
+        }
+        public Task<bool> AddAsync(string key, string value, DateTimeOffset expiresAt, When when = When.Always, CommandFlags flag = CommandFlags.None)
+        {
+            var expiration = expiresAt.UtcDateTime.Subtract(DateTime.UtcNow);
+
+            return Database.StringSetAsync(key, value, expiration, when, flag);
+        }
+
+        public Task<bool> ReplaceAsync(string key, string value, When when = When.Always, CommandFlags flag = CommandFlags.None)
+        {
+            return AddAsync(key, value, When.Always, CommandFlags.None);
+        }
+        public Task<bool> ReplaceAsync(string key, string value, TimeSpan? expiry = default(TimeSpan?), When when = When.Always, CommandFlags flag = CommandFlags.None)
+        {
+            return AddAsync(key, value, expiry, when, flag);
+        }
+        public Task<bool> ReplaceAsync(string key, string value, DateTimeOffset expiresAt, When when = When.Always, CommandFlags flag = CommandFlags.None)
+        {
+            return AddAsync(key, value, expiresAt, when, flag);
+        }
+
         #endregion
 
 
